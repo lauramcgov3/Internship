@@ -1,0 +1,51 @@
+<!--<input type="file" class="form-control" id="inputImageTitre" name="inputImageTitre" placeholder="Image" fileread="viewer.currentImage">-->
+
+<link href="css/images.css" rel="stylesheet">
+<link href="css/directives/viewer/viewer.css" rel="stylesheet">
+<div class="viewer">
+    <!-- <div id="l" oncontextmenu="return false;"></div> -->
+    <ng-canvas ng-if="dataHasLoaded" id="'ccl'" image="images['CCR']" nb-screens="nbScreens" position="1" view="view" data-ng-show="view == 'all' || view == 'ws' || view == 'ccl' || view == 'cc'" data-ng-class="{
+    'viewer-1-screen': view == 'ccl',
+    'viewer-2-screens': view == 'cc',
+    'viewer-4-screens': view == 'all'
+  }"></ng-canvas>
+  <ng-canvas ng-if="dataHasLoaded" id="'ccr'" image="images['CCL']" nb-screens="nbScreens" position="2" view="view" data-ng-show="view == 'all' || view == 'ws' || view == 'ccr' || view == 'cc'" data-ng-class="{
+  'viewer-1-screen': view == 'ccr',
+  'viewer-2-screens': view == 'cc',
+  'viewer-4-screens': view == 'all'
+}"></ng-canvas>
+<ng-canvas ng-if="dataHasLoaded" id="'mlol'" image="images['MLOL']" nb-screens="nbScreens" position="3" view="view" data-ng-show="view == 'all' || view == 'ws' || view == 'mlol' || view == 'mlo'" data-ng-class="{
+'viewer-1-screen': view == 'mlol',
+'viewer-2-screens': view == 'mlo',
+'viewer-4-screens': view == 'all'
+}"></ng-canvas>
+<ng-canvas ng-if="dataHasLoaded" id="'mlor'" image="images['MLOR']" nb-screens="nbScreens" position="4" view="view" data-ng-show="view == 'all' || view == 'ws' || view == 'mlor' || view == 'mlo'" data-ng-class="{
+'viewer-1-screen': view == 'mlor',
+'viewer-2-screens': view == 'mlo',
+'viewer-4-screens': view == 'all'
+}"></ng-canvas>
+<div class="box">
+<div class="toolbar">
+    <button ng-click="resetZoom()">Reinitialize Zoom</button><br>
+    <button ng-attr-class="{{tool.category == 'hand' && 'selected'}}" ng-click="changeTool('hand', '')">Hand</button><br>
+    <button ng-attr-class="{{tool.action == 'selection' && 'selected'}}" ng-click="changeTool('annotation', 'selection')">Selection</button><br>
+    <button ng-attr-class="{{tool.action == 'freeDraw' && 'selected'}}" ng-click="changeTool('annotation', 'freeDraw')">Free Draw</button><br>
+    <button ng-attr-class="{{tool.action == 'annotation' && tool.action == 'circle' && 'selected'}}" ng-click="changeTool('annotation', 'circle')">Circle</button><br>
+    <button ng-attr-class="{{tool.action == 'rectangle' && 'selected'}}" ng-click="changeTool('annotation', 'rectangle')">Rectangle</button><br>
+    <button ng-attr-class="{{ tool.action == 'arrow' && 'selected'}}" ng-click="changeTool('annotation', 'arrow')">Arrow</button><br>
+    <br>
+    <button data-ng-click="setView('ccl');">Left CC</button><br>
+    <button data-ng-click="setView('ccr');">Right CC</button><br>
+    <button data-ng-click="setView('cc');">CC</button><br>
+    <button data-ng-click="setView('mlol');">Left MLO</button><br> 
+    <button data-ng-click="setView('mlor');">Right MLO</button><br>
+    <button data-ng-click="setView('mlo');">MLO</button><br>
+    <button data-ng-click="setView('all');">ALL</button><br>
+    <button data-ng-click="setView('ws');">Workspace</button><br>
+
+    <ul ng-repeat="annotation in annotations">
+      <li ng-attr-class="{{annotation._id == selectedAnnotation.attrs.id && 'selected'}}" ng-click="selectById(annotation._id)">{{annotation._id}}</li>
+    </ul>
+</div>
+</div>
+</div>

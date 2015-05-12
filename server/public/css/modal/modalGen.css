@@ -1,0 +1,11 @@
+/*Bouton d'erreur*/
+.closeModal {
+    position:absolute;
+    right:5px;
+    cursor: pointer;
+}
+
+.closeModal:hover {
+    cursor: pointer;
+    color:black;
+}

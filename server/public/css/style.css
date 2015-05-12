@@ -1,0 +1,59 @@
+.tab {
+    border-radius: 5px;
+    border: 1px solid #000;
+/*
+    width: 70%; 
+    height: 90%;
+*/
+/*
+    margin-left:15%; 
+    margin-right:15%;
+*/
+    background: #2e3338;
+    text-align: left;
+}
+.sign-card {
+    background: #2e3338;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 25px 25px 5px 25px;
+    margin: 0 auto 25px;
+    margin-bottom: 20px;
+    width: 280px;
+    overflow: auto;
+}
+
+.navbar {
+    margin-top: 10px;
+}
+
+
+.selected {
+    background-color : yellow;
+}
+
+.canvas {
+    position: relative;
+    /*z-index:2;*/
+}
+
+.liste {
+    background-color : grey;
+    position: absolute; top: 0; right: 25%;
+    /*z-index:1;*/
+}
+
+.toolbar {
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.x {
+    color : red;
+}
+
+.t {
+    color: blue;
+}

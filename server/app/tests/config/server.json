@@ -1,0 +1,16 @@
+{
+  "server": {
+    "ipAddress": "127.0.0.1",
+    "port": 3002
+  },
+  "token": {
+    "secret": "p0@(2eax=@)c)%vb%h@ew%=2=eund^i)^hzue#=0o4eeh%)(i$",
+    "expiration": 60
+  },
+  "redis": {
+    "port": 6379
+  },
+  "log": {
+    "path": "/tmp/medicalstudio/"
+  }
+}

@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="../css/singup.css">
+<div class="jumbotron text-center">
+	<img class="logo" src="img/intuitim.png" alt="logo" />
+	<h1 class="appName">MedicalStudio</h1>
+</div>
+<div class="text-center">
+	<p data-ng-repeat="alert in smAlerts" class="text-{{alert.type}} text-center">{{alert.msg}}</p>
+	<div class="sign-card">
+		<form name="registerForm" data-ng-submit="signUp(registerForm);">
+			<input type="text" class="form-control" placeholder="Username" name="username" data-ng-model="username" id="username" data-ng-pattern="alphanumeric" required>
+			<br>
+			<br>
+			<input type="password" class="form-control" placeholder="Password" name="password" data-ng-model="password" id="password" required>
+			<br>
+			<br>
+			<input type="password" class="form-control" placeholder="Re-enter Password" name="passwordConfirmation" data-ng-model="passwordConfirmation" id="passwordConfirmation" required>
+			<br>
+			<br>
+			<select class="form-control" multiple data-ng-init="roles = roles || rolesList[2].value" data-ng-model="roles" data-ng-options="role.value as role.name for role in rolesList" required>
+			</select>
+			<br>
+			<label>Choose the relevant types of images: </label>
+			<div class="types" data-ng-repeat="type in types">
+				<input type="checkbox" data-ng-model="type.relevant"> {{type.type}}
+			</div>
+			<br>
+			<button type="submit" class="btn btn-default" translate>Sign Up</button>
+		</form>
+	</div>
+	<br>
+	<br>
+	<a href="/signin" translate>Sign In</a>
+</div>

@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="../../css/directives/searchPanel.css">
+<div class="row">
+    <div class="col-xs-6 col-md-3">
+        <p class="input-group">
+            <input type="text" class="form-control" ng-model="searchParams.globalSearch" ng-change="globalSearch()" 
+                           placeholder="Search..." style="height:36px;">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="removeGlobalSearchText()">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </span>
+        </p>
+    </div>
+    <div class="text-right col-xs-6 col-md-2" ng-if="innerTemplate">
+        <button id="searchPanel_btnCollapse" class="btn btn-primary btnSearch collapsed" type="button" data-toggle="collapse" data-target="#searchPanel_collapsable" aria-expanded="false" aria-controls="searchPanel_collapsable" ng-click="arrow()">
+                    Advanced Search
+                    <span id="searchPanel_collapsableArrow" class="glyphicon {{arrowClass}}"></span>
+        </button>
+    </div>
+</div>
+<div id="searchPanel_collapsable" class="collapse" ng-if="innerTemplate">
+    <div class="well">
+        <div ng-include="innerTemplate"></div>
+        <div class="btn btn-submit" ng-click="advancedSearch()">Search</div>
+    </div>
+</div>

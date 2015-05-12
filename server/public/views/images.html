@@ -1,0 +1,17 @@
+<div class="container">
+    <link rel="stylesheet" href="../css/images.css">
+
+    <div class="container" style="padding-top: 50px;">
+
+        <div data-ng-include="'views/subviews/header.html'"></div>
+
+
+        <div class="imageElement" data-ng-repeat="img in images">
+            <img src="{{img.fileLocation}}"><br>
+        </div>
+    </div>
+    
+    <p>Test</p>
+
+    <div data-ng-include="'views/subviews/footer.html'"></div>
+</div>

@@ -1,0 +1,14 @@
+[
+    {
+        _id: "patient1",
+        NISS: "61030151814",
+        name: "Jane Doe",
+        birthdate: "01/03/1961",
+    }, 
+    {
+        _id : "patient2",
+        NISS: "80051251021",
+        name: "John Doe",
+        birthdate: "12/05/1980",
+    }
+]

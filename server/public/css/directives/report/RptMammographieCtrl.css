@@ -1,0 +1,11 @@
+.reportMammo .dropdown-causes > li > a {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.reportMammo .dropdown-menu > li > a {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+}

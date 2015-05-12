@@ -1,0 +1,7 @@
+.toolbar {
+    position: absolute;
+    width: 150px;
+    right: 5px;
+    top: 2px;
+    z-index : 3;
+}

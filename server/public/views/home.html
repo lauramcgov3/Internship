@@ -1,0 +1,13 @@
+<div class="container">
+	<div data-ng-include="'views/subviews/header.html'"></div>
+    
+    <search-panel class="col-md-12" search-function="updateStudiesFromSearch" inner-template="views/directives/searchPanel/patientPanel.html"></search-panel>
+    <div data-ng-include="'views/subviews/patients.html'"></div>
+    
+    <!--DISPLAY IMAGES-->
+	<br>
+	<!--<div data-ng-repeat="img in images" style="padding-top: 20px;" style = "display: inline;">
+		<img src="{{img.fileLocation}}" style="max-width:20%; max-height:20%;"><br>
+	</div>-->
+	<div data-ng-include="'views/subviews/footer.html'"></div>
+</div>

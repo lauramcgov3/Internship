@@ -1,0 +1,71 @@
+// Données seulement utilisées pour les tests unitaires
+
+"patient": {
+            "NISS": "61030151814",
+            "name": "Jane Doe",
+            "birthdate": "01/03/1961"
+},
+
+        "patient": {
+            "NISS": "80051251021",
+            "name": "John Doe",
+            "birthdate": "12/05/1980"
+        }
+
+[
+    {
+        "id": "s1",
+        "date": "11/3/2015",
+        "type": "Xray",
+        "images": [
+            {
+                "fileLocation": "../../../../app/images/BrainXrayA.jpg"
+            },
+            {
+                "fileLocation" : "../../../../app/images/BrainXrayB.jpg"
+            }
+        ],
+        "patient": {
+            "NISS": "61030151814",
+            "name": "Jane Doe",
+            "birthdate": "01/03/1961"
+        }
+    },
+    {
+        "id": "s2",
+        "date": "28/02/2015",
+        "type": "CAT",
+        "images": [
+            {
+                "fileLocation": "../../../../app/images/CATBrainA.jpg"
+            },
+            {
+                "fileLocation": "../../../../app/images/CATBrainB.jpg"
+            }
+        ],
+        "patient": {
+            "NISS": "80051251021",
+            "name": "John Doe",
+            "birthdate": "12/05/1980"
+        }
+    },
+
+    {
+        "id": "s3",
+        "date": "14/03/2015",
+        "type": "MRI",
+        "images": [
+            {
+                "fileLocation": "../../../../app/images/MRIScanA.png"
+            },
+            {
+                "fileLocation": "../../../../app/images/MRIScanB.png"
+            }
+        ],
+        "patient": {
+            "NISS": "80051251021",
+            "name": "John Doe",
+            "birthdate": "12/05/1980"
+        }
+    }
+]

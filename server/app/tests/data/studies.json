@@ -1,0 +1,22 @@
+[
+    {
+        "_id": "study1",
+       "patient_id" : "patient1",
+        "date": "11/3/2015",
+        "type": "Xray",
+    },
+    {
+        "_id": "study2",
+        "patient_id" : "patient2",
+        "date": "28/02/2015",
+        "type": "CAT",
+        "patient_id" : "patient2"
+    },
+    {
+        "_id": "study3",
+        "patient_id" : "patient1",
+        "date": "14/03/2015",
+        "type": "MRI",
+    }
+]
+

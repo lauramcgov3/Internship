@@ -1,0 +1,58 @@
+<link href="../../../css/directives/report/RptBasicCtrl.css" rel="stylesheet">
+<div class="reportBasic">
+    <div class="col-md-12">
+        <label>Basic Report</label>
+        <div class="text-center">
+            <img class="basicImg" src="https://c402277.ssl.cf1.rackcdn.com/photos/806/images/hero_small/SCR_47384.jpg?1345530917" />
+        </div>
+        <div>
+            <label for="commentsSection">Comments</label>
+            <textarea id="commentsSection" ng-model="report.comments"></textarea>
+        </div>
+    </div>
+      <div class="col-md-12 text-center">
+        Satisfying technical quality?
+        <div>
+            <div>
+                <div class="btn-group radio-group">
+                    <button class="btn btn-primary btn-xs" data-ng-model="report.techQuality" 
+                            data-btn-radio="'yes'" data-ng-click="resetCauses()">Oui</button>
+                    <div class="btn-group radio-group" dropdown>
+                        <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-ng-model="report.techQuality" 
+                                data-btn-radio="'no1'" dropdown-toggle>
+                            Non, acceptable
+                        </button>
+                        <ul class="dropdown-menu dropdown-report text-left dropdown-causes" role="menu">
+                            <li data-ng-repeat="cause in causes">
+                                <a href="" data-ng-click="selectCause(cause)">
+                                    <i class="fa" data-ng-class="{'fa-check-square-o': cause.checked, 'fa-square-o': !cause.checked}"></i>
+                                     {{cause.title}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-group radio-group" dropdown>
+                        <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-ng-model="report.techQuality" 
+                                data-btn-radio="'no2'" dropdown-toggle>
+                            Non, à refaire
+                        </button>
+                        <ul class="dropdown-menu dropdown-report text-left dropdown-causes" role="menu">
+                            <li data-ng-repeat="cause in causes">
+                                <a href="" data-ng-click="selectCause(cause)">
+                                    <i class="fa" 
+                                       data-ng-class="{'fa-check-square-o': cause.checked, 'fa-square-o': !cause.checked}"></i>
+                                     {{cause.title}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="font-size:12px;padding-top:5px;font-style: italic;">
+                <span data-ng-repeat="cause in causes" data-ng-if="cause.checked === true">
+                    {{cause.title}}<span class="separator"> - </span>
+                </span>
+            </div>
+        </div>
+    </div> 
+</div>

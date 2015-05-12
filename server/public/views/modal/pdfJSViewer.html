@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="../../css/modal/pdfJSViewer.css">
+<div class="content">
+    <!--PDF Viewer navbar-->
+    <div class="menu">
+        <div class="menuSection pageSection">
+            <div class="btn btn-default" title="Previous page" ng-click="prevPage()"><i class="fa fa-arrow-left"></i></div>
+            <div class="btn btn-default" title="Next page" ng-click="nextPage()"><i class="fa fa-arrow-right"></i></div>
+            <div><input class="pageNumber" type="text" ng-model="currentPage" ng-change="currentPageChange()"/><span class="totalPages">/ {{totalPages}}</span></div>
+        </div>
+        
+        <div class="menuSection zoomSection">
+            <div class="btn btn-default" title="Zoom in" ng-click="zoomIn()"><i class="fa fa-plus"></i></div>
+            <div class="btn btn-default" title="Zoom out" ng-click="zoomOut()"><i class="fa fa-minus"></i></div>
+            <div class="btn btn-default" title="Reset zoom" ng-click="reinitZoom()">Reset</div>
+        </div>
+        
+        <div class="btn btn-default btn-export" title="Export" ng-click="export()"><i class="fa fa-file-pdf-o"></i> Export to PDF</div>             
+        <div class="btn btn-default btn-close" title="Close" ng-click="close()"><i class="fa fa-times"></i></div>
+    </div>
+    
+    <!--PDF Viewer-->
+    <pdfviewer src="{{pdfUrl()}}" on-page-load='pageLoaded(page,total)' id="viewer" scale="1.8">
+        <div class="viewerContainer">
+            <canvas></canvas>
+        </div>
+    </pdfviewer>
+</div>

@@ -1,0 +1,38 @@
+{
+  "name": "medicalstudio",
+  "description": "npm medical studio",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "*",
+    "body-parser": "*",
+    "bristol": "^0.3.1",
+	"dateformat": "*",
+    "ejs": "^2.3.1",
+    "express": "~3.4.8",
+    "express-jwt": "~0.2.1",
+    "fs": "*",
+    "generate-key": "*",
+    "html-pdf": "1.1.0",
+    "jsonwebtoken": "~0.4.0",
+    "konva": "^0.9.0",
+    "methods": "^1.1.1",
+    "mime": "*",
+    "mkdirp": "^0.5.0",
+    "mongodb": "*",
+    "mongoose": "*",
+    "multer": "*",
+    "nconf": "*",
+    "path": "*",
+    "phantomjs-pdf": "^0.1.2",
+    "proxyquire": "^1.4.0",
+    "redis": "~0.10.1",
+    "underscore": "~1.5.2",
+    "util": "^0.10.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.1",
+    "should": "^5.2.0",
+    "sinon": "^1.14.1",
+    "supertest": "^0.15.0"
+  }
+}

@@ -1,0 +1,34 @@
+
+<form class="left">
+    <div class="form-group">
+        <label for="searchParams_name">Name</label>
+        <input id="searchParams_name" type="text" class="form-control" placeholder="Name" ng-model="searchParams.name">
+    </div>
+    <div class="form-group">
+        <label for="searchParams_niss">NISS</label>
+        <input id="searchParams_niss" type="text" class="form-control" placeholder="NISS" ng-model="searchParams.niss">
+    </div>
+    <div>
+        <label>Date</label>
+        <p class="input-group">
+        <input type="text"
+               class="form-control"
+               ng-click="open($event, 'isDateSearchOpenned')"
+               datepicker-popup="{{format}}"
+               ng-model="searchParams.date"
+               is-open="datepicker.isDateSearchOpenned"
+               datepicker-options="dateOptions"
+               date-disabled="disabled(date, mode)"
+               ng-required="true"
+               ng-readonly="true"
+               close-text="Fermer"
+        />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open($event, 'isDateSearchOpenned')">
+                <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+        </span>
+        </p>
+
+    </div>
+</form>

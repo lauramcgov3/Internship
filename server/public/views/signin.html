@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="../css/singin.css">
+<div class="jumbotron text-center">
+    <img class="logo" src="img/intuitim.png" alt="logo" />
+    <h1 class="appName">MedicalStudio</h1>
+</div>
+<p data-ng-repeat="alert in alerts" class="text-center">{{alert.msg}}</p>
+<div class="sign-card">
+    <form data-ng-submit="signIn(login);" class="text-center">
+        <input type="text" class="form-control" data-ng-model="username" autocapitalize="off" autocorrect="off" required placeholder="Username"><br><br>
+        <input type="password" class="form-control" data-ng-model="password" required placeholder="Password"><br><br>
+        <input id="rememberMe" data-ng-model="rememberme" type="checkbox">  <label for="rememberMe" class="lblRememberMe">{{rememberLabel}}</label><br><br>
+        <button type="submit" class="btn btn-default">Sign In</button>
+    </form>
+</div>
+<br><br>
+<p class="text-center"><a href="/signup">Create an account</a></p>

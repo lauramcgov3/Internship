@@ -1,0 +1,112 @@
+<div class="container">
+	<link rel="stylesheet" href="../css/patient.css">
+	<div data-ng-include="'views/subviews/header.html'"></div>
+
+	<div class="outerDiv">    
+		<div class="row">
+			<div class="col-md-4 divHeight">
+
+				<!--Patient information table-->
+				<div class="panel panel-default divHeight">
+					<div class="panel-heading">Patient Information</div>
+					<div class="panel-body divHeight">
+						<div class="infosPatientlist">
+							<div class="infosPatientTable">
+								<div class="infoPatient">
+									<div class="infoPatientItem infoLabel">Name</div>
+									<div class="infoValue infoPatientItem">{{patient.name}}</div>
+								</div>
+								<div class="infoPatient">
+									<div class="infoPatientItem infoLabel">Date of Birth</div>
+									<div class="infoValue infoPatientItem">{{patient.birthdate}}</div>
+								</div>
+								<div class="infoPatient">
+									<div class="infoPatientItem infoLabel">NISS</div>
+									<div class="infoValue infoPatientItem">{{patient.NISS}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--Upload Form-->
+				<div class="panel panel-default divHeight">
+					<div class="panel-heading">Import Study</div>
+					<div class="container" ng-controller="UploadController">
+						<p>Select a file below to upload and create a new study</p>
+						<form>
+
+							<span class="btn btn-default btn-file"> 
+								<!--Button = file input type -->
+								Select file<input class="btn btn-default" type="file" name="thumbnail" multiple="" file-model="filesToUpload"> <!--file-model = filesToUpload passes to the directive in order to bind the files to $scope.-->
+							</span>
+							<input type="submit" data-ng-click="uploadFile();" action="/fileUpload" class="btn btn-default btn-upload" value="Upload"><!--Submit button to pass the files bound to $scope to the uploadFile() function in UploadCtrl.js-->
+						</form>
+
+					</div>
+                    
+                    <div style="width:100px; height:100px; background-color:yellow" ng-click="openPopup();">TEST POPUP</div>
+				</div>
+
+			</div>
+
+
+			<!--Studies table-->
+			<div class="col-md-8 divHeight">
+				<div class="row studiesDiv">
+					<div class="panel panel-default divHeight">
+						<div class="panel-heading">Studies</div>
+						<div class="panel-body innerStudiesDiv">
+							<table class="table table-hover table-condensed table-inner">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Date</th>
+										<th>Type of Images</th>
+										<th>Images</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody data-ng-repeat="stud in studies">
+									<tr>
+										<td>{{stud.id}}</td>
+										<td>{{stud.date}}</td>
+										<td>{{stud.type}}</td>
+										<td>{{stud.nbImages}}</td>
+										<td>
+											<i class="fa fa-file-text" title="View its report" ng-click="openReport(stud)"></i>
+											<i class="fa fa-eye" title="Watch images in the viewer" ng-click="openViewer(stud.id)"></i>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!--<div id="pop" style="margin-top:50px;" data-toggle="popover" role="button" data-placement="bottom" data-content="Click on a study to open it."></div>-->
+						</div>
+					</div>
+				</div>
+
+				<!--Report section-->
+				<div class="row studiesDiv">
+					<div class="panel panel-default divHeight">
+						<div class="panel-heading">Report</div>
+						<div class="panel-body innerStudiesDiv">
+							<report controller-name="RptBasicController" study="currentStudy"></report>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Return button-->
+		<div>
+			<ul class="pager" style="bottom:0;margin: 10px 0;">
+				<li class="previous" data-ng-click="quit();"><a href="" data-toggle="tooltip" data-placement="top" title="Pressez ce bouton pour retourner à la liste des patients."><i class="fa fa-list-alt"></i> Retour</a>
+				</li>
+
+				<!--Download button-->
+				<li class="next" data-ng-click="print();" data-ng-show="showStudy"><a href="" data-ng-show="showStudy" data-toggle="tooltip" data-placement="top" title="Pressez ce bouton pour valider et télécharger le rapport."><i class="fa fa-download"></i> Télécharger (pdf)</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

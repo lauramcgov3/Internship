@@ -1,0 +1,68 @@
+
+.container .repHead
+{
+    color: #565656;
+}
+
+.container .repHead .reportTitle
+{
+    font-size:26px;
+/*    font-family: 'Regular';*/
+}
+
+.container .repHead .studyDate
+{
+    font-size:18px;
+    font-style: italic;
+/*    font-family: 'Light Italic';*/
+}
+
+.repHead .studySummary{
+    font-size: 20px;
+}
+
+.repContent .repSubtitle
+{
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+.comments{
+    min-height: 110px;
+}
+
+
+.container
+{
+    font-family: 'Arial';
+    font-size:18px;
+    font-weight: 100;
+}
+
+
+.container .row
+{
+    margin-bottom: 5px;
+}
+
+.unsatisfyingCauses
+{
+    padding-left: 5px;
+}
+
+.greySquare
+{
+    background-color: lightgrey;
+    display: inline-block;
+    padding: 0 4px;
+}
+
+.separator
+{
+    display:inline-block;
+    border-bottom: 1px solid #565656;;
+    width:100%;
+    margin: 15px 0;
+}

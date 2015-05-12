@@ -1,0 +1,13 @@
+.jumbotron img.logo
+{
+    width:75px;
+    height:75px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.jumbotron h1.appName
+{
+    display: inline-block;
+    vertical-align: bottom;
+}

@@ -1,0 +1,21 @@
+{
+    "username": "ninon",
+    "password": "$2a$10$0RIsn0ztsxC5/a4awkx4p.ljJLIstyvSRcBirYkMwpw/XB.tlmdZq",
+    "relevantTypes": [
+        {
+            "type": "Xray",
+            "relevant": false
+        }, 
+        {
+            "type" : "CAT",
+            "relevant" : true
+        }, 
+        {
+            "type" : "MRI",
+            "relevant" : true
+        }
+    ],
+    "roles" : [ 
+        "2"
+    ]
+}

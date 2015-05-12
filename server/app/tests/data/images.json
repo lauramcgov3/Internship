@@ -1,0 +1,22 @@
+[
+    {
+        "_id" : "image1",
+        "study_id" : "study1",
+        "fileLocation": "../../../../app/images/BrainXrayA.jpg",
+    },
+    {
+        "_id" : "image2",
+        "study_id" : "study2",
+        "fileLocation" : "../../../../app/images/BrainXrayB.jpg",
+    },
+    {
+        "_id" : "image3",
+        "study_id" : "study1",
+        "fileLocation": "../../../../app/images/MRIScanA.png",        
+    },
+    {
+        "_id" : "image4",
+        "study_id" : "study2",
+        "fileLocation": "../../../../app/images/MRIScanB.png",
+    }
+]

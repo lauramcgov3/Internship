@@ -1,0 +1,14 @@
+<div id='canvas_container'>
+	<canvas id="canvas">You have a very old browser... (It does not support HTML5 canvas)</canvas>
+</div>
+<div id='layers_menu'>
+	<div id='shapes_list_conatiner'>
+		<div>{{canvasShapes().length}} total</div>
+		<div id="shapes_list" ng-repeat="shape in canvasShapes()">
+			<div ng-class="{active: shape.get('active')}" class="shape " ng-click='selectShape()'>{{shape.get('fill')}}</div>
+		</div>
+	</div>
+	<button ng-click='addRect()'>Add rect</button>
+</div>
+
+<div id='timeline'>X: {{currentShape().get('left')}}, Y: {{currentShape().get('top')}}</div>

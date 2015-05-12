@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://127.0.0.1:3002/viewer/s1 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        
+        <!--Base-->
+		<!--<base href="/">--><base href=".">
+
+        <!--JQuery-->
+        <script src="./Medical Studio_files/jquery.min.js"></script>
+            
+        <!--AngularJS-->
+        <script src="./Medical Studio_files/angular.min.js"></script>
+		<script src="./Medical Studio_files/angular-route.min.js"></script>
+        
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.2/slate/bootstrap.min.css">
+<!--<link href="css/bootstrap.css" rel="stylesheet">-->
+        
+        <script src="./Medical Studio_files/bootstrap.min.js"></script>
+        <script src="./Medical Studio_files/ui-bootstrap-tpls-0.12.1.min.js"></script> 
+        
+        <!--FabricJS-->
+        <script src="./Medical Studio_files/fabric.min.js"></script>
+        
+        <!--Underscore-->
+        <script src="./Medical Studio_files/underscore-min.js"></script>
+        
+        <!--Konva-->
+        <script src="./Medical Studio_files/konva.js"></script>
+        
+        <!--App-->
+        <script src="./Medical Studio_files/appConfig.js"></script>
+        <script src="./Medical Studio_files/app.js"></script>
+        
+        <!--Services-->
+        <script src="./Medical Studio_files/AuthenticationService.js"></script>
+        <script src="./Medical Studio_files/TokenInterceptorService.js"></script>
+        <script src="./Medical Studio_files/ReportService.js" userservice=""></script>
+        <script src="./Medical Studio_files/ImageService.js"></script>
+        <script src="./Medical Studio_files/PatientService.js"></script>
+        <script src="./Medical Studio_files/StudyService.js"></script>
+        <script src="./Medical Studio_files/UserService.js"></script>
+        <script src="./Medical Studio_files/AnnotationService.js"></script>
+        
+        <!--Directives-->
+        <script src="./Medical Studio_files/searchPanel.js"></script>
+        <script src="./Medical Studio_files/report.js"></script>
+        <script src="./Medical Studio_files/fileread.js"></script>
+        <script src="./Medical Studio_files/drawAnnotation.js"></script>
+        
+        <!--Controllers-->
+        <script src="./Medical Studio_files/HeaderCtrl.js"></script>
+        <script src="./Medical Studio_files/SigninCtrl.js"></script>
+        <script src="./Medical Studio_files/SignupCtrl.js"></script>
+		<script src="./Medical Studio_files/ImageCtrl.js"></script>
+		<script src="./Medical Studio_files/PatientCtrl.js"></script>
+        <script src="./Medical Studio_files/StudyCtrl.js"></script>
+        <script src="./Medical Studio_files/UserCtrl.js"></script>
+        <script src="./Medical Studio_files/ViewerCtrl.js"></script>
+        
+        <!--Controllers - Rapport-->
+        <script src="./Medical Studio_files/RptMammographieCtrl.js"></script>
+         <script src="./Medical Studio_files/RptBasicCtrl.js"></script>
+        
+        <!--FontAwesome-->
+        <link href="http://127.0.0.1:3002/css/font-awesome.min.css" rel="stylesheet">
+        
+        <!--Layout-->
+        <link href="http://127.0.0.1:3002/css/style.css" rel="stylesheet">
+        <link href="http://127.0.0.1:3002/css/mammonote_css/style.css" rel="stylesheet">
+        
+		<title>Medical Studio</title>
+	</head>
+	<body data-ng-app="medicalStudioApp" class="ng-scope">
+		
+        <!-- ngView:  --><div ng-view="" class="ng-scope"><!--<input type="file" class="form-control" id="inputImageTitre" name="inputImageTitre" placeholder="Image" fileread="viewer.currentImage">-->
+
+<link href="http://127.0.0.1:3002/css/images.css" rel="stylesheet" class="ng-scope">
+<div class="viewer ng-scope">
+     <div id="l"><div class="konvajs-content" role="presentation" style="position: relative; display: inline-block; width: 500px; height: 500px;"><canvas width="500" height="500" style="padding: 0px; margin: 0px; border: 0px; position: absolute; top: 0px; left: 0px; width: 500px; height: 500px; background: transparent;"></canvas></div></div>
+    
+    <div class="toolbar">
+        <div>
+            <button ng-attr-class="{{selectedType == &#39;circle&#39; &amp;&amp; &#39;selected&#39;}}" ng-click="selectedType = &#39;circle&#39;" class="selected">Circle</button><br>
+            <button ng-attr-class="{{selectedType == &#39;rectangle&#39; &amp;&amp; &#39;selected&#39;}}" ng-click="selectedType = &#39;rectangle&#39;" class="false">Rectangle</button><br>
+            <button ng-click="removeCircle()">Remove circle</button><br>
+            <button ng-click="saveAll()">Save</button>
+            <!-- ngRepeat: annotation in annotations --><ul ng-repeat="annotation in annotations" class="ng-scope">
+                <li ng-attr-class="{{annotation == selectedCircle &amp;&amp; &#39;selected&#39;}}" ng-click="selectById(annotation.attrs.id)" class="false">{"message":"message","image_id":"imageDeBase","type":"circle","left":316,"top":366}</li>
+            </ul><!-- end ngRepeat: annotation in annotations -->
+        </div>
+      </div>
+</div>
+
+     
+
+
+
+
+    
+</div>
+	
+
+</body></html>

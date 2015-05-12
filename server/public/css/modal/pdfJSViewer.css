@@ -1,0 +1,47 @@
+.PDFViewerPopup .modal-dialog{
+    width: 90%;
+    height: 90%;
+}
+
+.modal-content
+{
+    text-align: center;
+}
+
+.menu{
+    margin-bottom: 5px;
+}
+
+.menu div{
+    display:inline-block;
+}
+
+.menu .pageNumber{
+    width:40px;
+    text-align: right;
+    padding-right: 3px;
+}
+
+.menu .totalPages{
+    padding-left: 5px;
+}
+
+.menu .btn-export{
+    margin-left:10px;
+}
+
+.menu .btn-close{
+    position: absolute;
+    top:0;
+    right: 0;
+}
+.menu .menuSection
+{
+    padding-left:10px;
+    padding-right: 10px;
+}
+
+pdfviewer .viewerContainer{
+    overflow:auto;
+    height: 90vh;
+}

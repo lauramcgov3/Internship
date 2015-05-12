@@ -1,0 +1,90 @@
+[
+    {
+        "id": "s1",
+        "date": "11/3/2015",
+        "type": "Xray",
+        "studyType" : "Mammographie",
+        "images": [
+            {
+                "id": "image_1",
+                "fileLocation": "../../../images/BrainXrayA.jpg",
+                "laterality": "R",
+                "position": "CC"
+            },
+            {
+                "id": "image_2",
+                "fileLocation": "../../../images/BrainXrayB.jpg",
+                "laterality": "L",
+                "position": "CC"
+            },
+            {
+                "id": "image_3",
+                "fileLocation": "../../../images/CATBrainA.jpg",
+                "laterality": "R",
+                "position": "MLO"
+            },
+            {
+                "id": "image_4",
+                "fileLocation": "../../../images/CATBrainB.jpg",
+                "laterality": "L",
+                "position": "MLO"
+            }
+        ],
+        "patient": {
+            "NISS": "61030151814",
+            "name": "Jane Doe",
+            "birthdate": "01/03/1961"
+        }
+    },
+    {
+        "id": "s2",
+        "date": "28/02/2015",
+        "type": "CAT",
+        "studyType" : "Mammographie",
+        "images": [
+            {
+                "id": "image_3",
+                "fileLocation": "../../../images/CATBrainA.jpg",
+                "laterality": "R",
+                "position": "CC"
+            },
+            {
+                "id": "image_4",
+                "fileLocation": "../../../images/CATBrainB.jpg",
+                "laterality": "L",
+                "position": "CC"
+            }
+        ],
+        "patient": {
+            "NISS": "80051251021",
+            "name": "John Doe",
+            "birthdate": "12/05/1980"
+        }
+    },
+
+    {
+        "id": "s3",
+        "date": "14/03/2015",
+        "type": "MRI",
+        "studyType" : "Basic",
+        "images": [
+            {
+                "id": "image_5",
+                "fileLocation": "../../../images/MRIScanA.png",
+                "laterality": "R",
+                "position": "CC"
+            },
+            {
+                "id": "image_6",
+                "fileLocation": "../../../images/MRIScanB.png",
+                "laterality": "L",
+                "position": "CC"
+            }
+        ],
+        "patient": {
+            "NISS": "61030151814",
+            "name": "Jane Doe",
+            "birthdate": "01/03/2015"
+        }
+    }
+]

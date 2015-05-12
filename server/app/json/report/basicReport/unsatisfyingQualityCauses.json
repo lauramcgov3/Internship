@@ -1,0 +1,31 @@
+{
+    "version": "0.1",
+    "causes":
+    [
+        {
+            "id": 1
+            ,"title": "Positionnement"
+            ,"checked" : false
+        }
+        ,{
+            "id": 2
+            ,"title": "Artéfact"
+            ,"checked" : false
+        }
+        ,{
+            "id": 3
+            ,"title": "Contraste"
+            ,"checked" : false
+        }
+        ,{
+            "id": 4
+            ,"title": "Compression"
+            ,"checked" : false
+        }
+        ,{
+            "id": 5
+            ,"title": "Problème tech/physique"
+            ,"checked" : false
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+[
+    {
+        "_id" : "annotation1",
+       "image_id" : "image1",
+        "message" : "Ceci est une annotation",
+    },
+    {
+        "_id" : "annotation2",
+        "image_id" : "image1",
+        "message" : "Incroyable, deux annotations !",
+    },
+    {
+        "_id" : "annotation3",
+        "image_id" : "image2",
+        "message" : "Incroyable, trois annotations !",
+    },
+    {
+        "_id" : "annotation4",
+        "image_id" : "image3",
+        "message" : "Incroyable, quatre annotations !",
+    },
+    {
+        "_id" : "annotation5",
+        "image_id" : "image4",
+        "message" : "Incroyable, cinq annotations !",
+    }
+
+]

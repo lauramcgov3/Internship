@@ -1,0 +1,249 @@
+<link href="../../../css/directives/report.css" rel="stylesheet">
+<link href="../../../css/directives/report/RptMammographieCtrl.css" rel="stylesheet">
+<div class="reportMammo">
+    <div class="col-md-6">
+        <div class="text-center">
+            <div class="row">
+                <span>Lésions du sein droit</span>
+            </div>
+            <div class="row">
+                <img style="max-width:140px;" src="http://theheightsanimalhospital.com/clients/15389/images/playful-kitten-6683.jpg"/>
+            </div>
+            <div class="row">
+                <div ng-repeat="one in [4,3]">
+                    VOICI UNE LÉSION
+                    {{good}}
+                </div>
+            </div>
+            <div class="row">
+                <span>ACR Density Type: </span>
+                <div class="btn-group radio-group">
+                                            <button class="btn btn-primary btn-xs ng-pristine ng-valid active" data-ng-model="acrDensityR" data-btn-radio="'type1'" data-ng-change="changeDensityOrRecommendation();">1</button>
+                                            <button class="btn btn-primary btn-xs ng-pristine ng-valid" data-ng-model="acrDensityR" data-btn-radio="'type2'" data-ng-change="changeDensityOrRecommendation();">2</button>
+                                            <button class="btn btn-primary btn-xs ng-pristine ng-valid" data-ng-model="acrDensityR" data-btn-radio="'type3'" data-ng-change="changeDensityOrRecommendation();">3</button>
+                                            <button class="btn btn-primary btn-xs ng-pristine ng-valid" data-ng-model="acrDensityR" data-btn-radio="'type4'" data-ng-change="changeDensityOrRecommendation();">4</button>
+                </div>
+            </div>
+            <div class="row">
+                Satisfying technical quality?
+                <div>
+                    <div>
+                        <div class="btn-group radio-group">
+                            <button class="btn btn-primary btn-xs" data-ng-model="qualityR" 
+                                    data-btn-radio="'yes'" data-ng-click="resetCauses('R');" 
+                                    data-ng-change="changeDensityOrRecommendation(false);">Oui</button>
+                            <div class="btn-group radio-group" dropdown>
+                                <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-ng-model="qualityR" 
+                                        data-btn-radio="'no1'" data-ng-disabled="disabled" 
+                                        data-ng-change="changeDensityOrRecommendation(false);" dropdown-toggle>
+                                    Non, acceptable
+                                </button>
+                                <ul class="dropdown-menu dropdown-report text-left dropdown-causes" role="menu">
+                                    <li data-ng-repeat="cause in causesR">
+                                        <a href="" data-ng-click="selectCause(causesR, cause)">
+                                            <i class="fa" data-ng-class="{'fa-check-square-o': cause.checked, 'fa-square-o': !cause.checked}"></i>
+                                             {{cause.title}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="btn-group radio-group" dropdown>
+                                <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-ng-model="qualityR" 
+                                        data-btn-radio="'no2'" data-ng-disabled="disabled" 
+                                        data-ng-change="changeDensityOrRecommendation(false);" dropdown-toggle>
+                                    Non, à refaire
+                                </button>
+                                <ul class="dropdown-menu dropdown-report text-left dropdown-causes" role="menu">
+                                    <li data-ng-repeat="cause in causesR">
+                                        <a href="" data-ng-click="selectCause(causesR, cause)">
+                                            <i class="fa" 
+                                               data-ng-class="{'fa-check-square-o': cause.checked, 'fa-square-o': !cause.checked}"></i>
+                                             {{cause.title}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center" style="font-size:12px;padding-top:5px;font-style: italic;">
+                        <span data-ng-repeat="cause in causesR" data-ng-if="cause.checked === true">
+                            {{cause.title}}<span class="separator"> - </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+             Conclusion ACR de type :
+                <div class="btn-group radio-group">
+                    <button class="btn btn-primary btn-xs" data-ng-model="acrConclusionR" 
+                            data-btn-radio="'type0'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityR == 'no2'">0</button>
+                    <button class="btn btn-primary btn-xs" data-ng-model="acrConclusionR" 
+                            data-btn-radio="'type1'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityR == 'no2'">1</button>
+                    <button class="btn btn-primary btn-xs" 
+                            data-ng-model="acrConclusionR" data-btn-radio="'type2'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityR == 'no2'">2</button>
+                    <button class="btn btn-primary btn-xs" 
+                            data-ng-model="acrConclusionR" data-btn-radio="'type3'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityR == 'no2'">3</button>
+                    <button class="btn btn-primary btn-xs" 
+                            data-ng-model="acrConclusionR" data-btn-radio="'type4'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityR == 'no2'">4</button>
+                    <button class="btn btn-primary btn-xs" 
+                            data-ng-model="acrConclusionR" data-btn-radio="'type5'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityR == 'no2'">5</button>
+                </div>
+                <div class="text-center" style="font-size:12px;padding-top:5px;font-style: italic;">
+                    {{currentAcrConclusionCauseR}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="text-center">
+            <div class="row">
+                <span>Lésions du sein gauche</span>
+            </div>
+            <div class="row">
+                <img style="max-width:140px;" src="http://theheightsanimalhospital.com/clients/15389/images/playful-kitten-6683.jpg"/>
+            </div>
+            <div class="row">
+                <div ng-repeat="one in [4,3]">
+                    VOICI UNE LÉSION
+                    {{good}}
+                </div>
+            </div>
+            <div class="row">
+                <span>ACR Density Type: </span>
+                <div class="btn-group radio-group">
+                                            <button class="btn btn-primary btn-xs ng-pristine ng-valid active" data-ng-model="acrDensityL" data-btn-radio="'type1'" data-ng-change="changeDensityOrRecommendation();">1</button>
+                                            <button class="btn btn-primary btn-xs ng-pristine ng-valid" data-ng-model="acrDensityL" data-btn-radio="'type2'" data-ng-change="changeDensityOrRecommendation();">2</button>
+                                            <button class="btn btn-primary btn-xs ng-pristine ng-valid" data-ng-model="acrDensityL" data-btn-radio="'type3'" data-ng-change="changeDensityOrRecommendation();">3</button>
+                                            <button class="btn btn-primary btn-xs ng-pristine ng-valid" data-ng-model="acrDensityL" data-btn-radio="'type4'" data-ng-change="changeDensityOrRecommendation();">4</button>
+                </div>
+            </div>
+            <div class="row">
+                Satisfying technical quality?
+                <div>
+                    <div>
+                        <div class="btn-group radio-group">
+                            <button class="btn btn-primary btn-xs" data-ng-model="qualityL" 
+                                    data-btn-radio="'yes'" data-ng-click="resetCauses('L');" 
+                                    data-ng-change="changeDensityOrRecommendation(false);">Oui</button>
+                            <div class="btn-group radio-group" dropdown>
+                                <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-ng-model="qualityL" 
+                                        data-btn-radio="'no1'" data-ng-disabled="disabled" 
+                                        data-ng-change="changeDensityOrRecommendation(false);" dropdown-toggle>
+                                    Non, acceptable
+                                </button>
+                                <ul class="dropdown-menu dropdown-report text-left dropdown-causes" role="menu">
+                                    <li data-ng-repeat="cause in causesL">
+                                        <a href="" data-ng-click="selectCause(causesL, cause)">
+                                            <i class="fa" data-ng-class="{'fa-check-square-o': cause.checked, 'fa-square-o': !cause.checked}"></i>
+                                             {{cause.title}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="btn-group radio-group" dropdown>
+                                <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-ng-model="qualityL" 
+                                        data-btn-radio="'no2'" data-ng-disabled="disabled" 
+                                        data-ng-change="changeDensityOrRecommendation(false);" dropdown-toggle>
+                                    Non, à refaire
+                                </button>
+                                <ul class="dropdown-menu dropdown-report text-left dropdown-causes" role="menu">
+                                    <li data-ng-repeat="cause in causesL">
+                                        <a href="" data-ng-click="selectCause(causesL, cause)">
+                                            <i class="fa" 
+                                               data-ng-class="{'fa-check-square-o': cause.checked, 'fa-square-o': !cause.checked}"></i>
+                                             {{cause.title}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center" style="font-size:12px;padding-top:5px;font-style: italic;">
+                        <span data-ng-repeat="cause in causesL" data-ng-if="cause.checked === true">
+                            {{cause.title}}<span class="separator"> - </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+             Conclusion ACR de type :
+                <div class="btn-group radio-group">
+                    <button class="btn btn-primary btn-xs" data-ng-model="acrConclusionL" 
+                            data-btn-radio="'type0'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityL == 'no2'">0</button>
+                    <button class="btn btn-primary btn-xs" data-ng-model="acrConclusionL" 
+                            data-btn-radio="'type1'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityL == 'no2'">1</button>
+                    <button class="btn btn-primary btn-xs" 
+                            data-ng-model="acrConclusionL" data-btn-radio="'type2'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityL == 'no2'">2</button>
+                    <button class="btn btn-primary btn-xs" 
+                            data-ng-model="acrConclusionL" data-btn-radio="'type3'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityL == 'no2'">3</button>
+                    <button class="btn btn-primary btn-xs" 
+                            data-ng-model="acrConclusionL" data-btn-radio="'type4'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityL == 'no2'">4</button>
+                    <button class="btn btn-primary btn-xs" 
+                            data-ng-model="acrConclusionL" data-btn-radio="'type5'" 
+                            data-ng-change="changeDensityOrRecommendation();acrConclusionsChange(true);" 
+                            data-ng-disabled="qualityL == 'no2'">5</button>
+                </div>
+                <div class="text-center" style="font-size:12px;padding-top:5px;font-style: italic;">
+                    {{currentAcrConclusionCauseL}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" col-md-12 text-center">
+        <div class="row">
+            ACR global de type :
+            <div class="btn-group radio-group">
+                <button class="btn btn-primary btn-xs" data-ng-model="globalAcr" 
+                        data-btn-radio="'type0'" data-ng-change="acrGlobalChange(0);">0</button>
+                <button class="btn btn-primary btn-xs" data-ng-model="globalAcr" 
+                        data-btn-radio="'type1'" data-ng-change="acrGlobalChange(1);">1</button>
+                <button class="btn btn-primary btn-xs" data-ng-model="globalAcr" 
+                        data-btn-radio="'type2'" data-ng-change="acrGlobalChange(2);">2</button>
+                <button class="btn btn-primary btn-xs" data-ng-model="globalAcr" 
+                        data-btn-radio="'type3'" data-ng-change="acrGlobalChange(3);">3</button>
+                <button class="btn btn-primary btn-xs" data-ng-model="globalAcr" 
+                        data-btn-radio="'type4'" data-ng-change="acrGlobalChange(4);">4</button>
+                <button class="btn btn-primary btn-xs" data-ng-model="globalAcr" 
+                        data-btn-radio="'type5'" data-ng-change="acrGlobalChange(5);">5</button>
+            </div>
+        </div>
+        <div class="row">
+            <div style="text-align:center;padding-top: 10px;">
+                <span>Recommandation de suivi :</span> 
+                <div class="btn-group" dropdown is-open="status.isopen">
+                    <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-ng-disabled="disabled" style="width: 229px;" dropdown-toggle>
+                        {{currentRecommendation}} <span class="caret"></span>
+                    </button>
+                    <div style="clear:both;"></div>
+                    <ul class="dropdown-menu dropdown-report" role="menu" style="width: 229px;">
+                        <li class="text-center" data-ng-repeat="recommendation in recommendations">
+                            <a href="" data-ng-click="chooseRecommendation(recommendation)">{{recommendation}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

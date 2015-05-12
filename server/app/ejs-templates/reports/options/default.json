@@ -1,0 +1,16 @@
+{
+    "_help": "For all the options: https://www.npmjs.com/package/html-pdf",
+    "border": {
+        "top": "0.3in",            
+        "right": "0.3in",
+        "bottom": "0.3in",
+        "left": "0.3in"
+    },
+    "footer": {
+    },
+    "viewportSize": {
+        "width": 1024,
+        "height": 1024
+    }, 
+    "type": "pdf"
+}

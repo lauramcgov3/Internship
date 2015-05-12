@@ -1,0 +1,15 @@
+<div class="text-center">
+    <div data-ng-include="'views/subviews/header.html'"></div>
+    <div class="panel">
+        <div class="panel-heading">{{user.username}}</div>
+        <div class="panel-body">
+            <label>Choose your relevant types of images: </label>
+            <form data-ng-submit="updateUser();">
+                <div data-ng-repeat="type in types">
+                    <input type="checkbox" data-ng-model="type.relevant"> {{type.type}}
+                </div><br>
+                <button class="btn btn-primary">Save the changes</button>
+            </form>           
+        </div>
+    </div>
+</div>

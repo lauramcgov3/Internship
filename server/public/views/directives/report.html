@@ -1,0 +1,13 @@
+<link href="../../../css/directives/report.css" rel="stylesheet">
+<div>
+    <div ng-include="innerTemplate"></div>
+    <div ng-hide="study"><i>Select a study to view its report</i></div>
+    <div class="col-md-12" ng-if="study">
+        <div>
+            <ul class="pager">
+                <li class="next" data-ng-click="getRapport();"><a href="" data-toggle="tooltip" data-placement="top" title="Pressez ce bouton pour retourner à la liste des patients."><i class="fa fa-file-pdf-o"></i> PDF</a></li>
+                <li class="next" data-ng-click="quit();"><a href="" data-toggle="tooltip" data-placement="top" title="Pressez ce bouton pour retourner à la liste des patients."><i class="fa fa-check"></i> Valider</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

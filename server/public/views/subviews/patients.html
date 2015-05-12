@@ -1,0 +1,22 @@
+<div class="col-md-12">
+    <div class="tab">
+        <div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>NISS</th>
+                        <th>Birthdate</th>
+                    </tr>
+                </thead>
+                <tbody data-ng-repeat="pat in patients">
+                    <tr data-ng-click="openStudies(pat);">
+                        <td>{{pat.name}}</td>
+                        <td>{{pat.NISS}}</td>
+                        <td>{{pat.birthdate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

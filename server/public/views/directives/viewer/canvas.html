@@ -1,0 +1,16 @@
+<link href="../../../css/directives/viewer/viewer.css" rel="stylesheet">
+<div class="canvas">
+	<div id="{{id}}" class="canvas" oncontextmenu="return false;"></div>
+	<div ng-show="annotations[0]" class="liste">
+		<ul>
+			<li  ng-repeat="annotation in annotations">
+				<span ng-attr-class="{{currentGroup.attrs.id.toString() == annotation._id && 'selected'}}" ng-click="selectElement(annotation._id)">{{annotation.type}}</span>
+				<input type="checkbox" ng-model="annotation.isVisible" ng-change="showAnnotation(annotation)" />
+				<span class="t" ng-click="addText(annotation)">T</span>
+				<span class="x" ng-click="removeAnnotation(annotation)">X</span>
+			</li>
+
+	    </ul>
+	</div>
+</div>
+
